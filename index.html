@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>Tables Test</title>
+	<link rel="icon" href="small.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="medium.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="large.png" sizes="128x128" type="image/png">
+	<link rel="shortcut" href="large.png" sizes="128x128" type="image/png">
+	<!--<link rel="image_src" href="http://___/large.png">-->
+	
+	<meta http-equiv="Content-language" content="ru">
+	<meta name="keywords" content="template">
+	<meta name="description" content="Elerium Web Template. ver 3">
+	
+	<meta name="author" content="elerium.org">
+	<meta name="copyright" content="elerium.org">
+	
+	<link href="style.css" rel="stylesheet">
+
+	<script src="jquery-3.1.1.min.js" ></script>
+	<script src="jquery.ui.sortable.min.js" ></script>
+
+	<script src="angular.min.js" ></script>
+	
+	<script src="main.js" ></script>
+</head>
+<body>
+
+	<div id='wrapper' ng-app="app" ng-controller="main">
+		<header>
+			Angular UI tables Demo
+		</header>
+		
+		<div id='content'>
+			<div class='content_body'>
+				<show-tables search="space engine showcase"></show-tables>
+				
+				<show-tables search="space engine proxima centauri"></show-tables>
+			</div>
+		</div>
+		
+		<footer>
+			<div class='footer_body'>
+				I'm a footer and I can tell a long long story,
+				but footers nowadays tend to be short.
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

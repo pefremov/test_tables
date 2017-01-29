@@ -1,0 +1,48 @@
+
+<div ng-if="!$ctrl.table">
+    Loading
+</div>
+<div ng-if="$ctrl.table">
+	
+	<div class="table_setup">
+		<label><input type="checkbox" checked ng-model="$ctrl.show.title" />Show Title</label><br>
+		<label><input type="checkbox" checked ng-model="$ctrl.show.channel" />Show Channel</label><br>
+		<label><input type="checkbox" checked ng-model="$ctrl.show.description" />Show Description</label><br>
+		
+		<input ng-click="$ctrl.exportTable($event)" type="button" value="Create JSON export file" />
+		<a href="" class="export_link">Download file</a>
+	</div>
+	
+	<table class="test_table" style="border-width: 2px; width: 100%;" border="1">
+		<thead>
+			<tr class="tr_head">
+				<td rowspan="2" class="row_head text_unselectable">#</div>
+				<td class="row_head text_unselectable" ng-click="$ctrl.sortBy('videoID', $event)">Link</div>
+				<td ng-show="$ctrl.show.title" class="row_head text_unselectable" ng-click="$ctrl.sortBy('title', $event)">Title ↓</div>
+				<td ng-show="$ctrl.show.channel" class="row_head text_unselectable" ng-click="$ctrl.sortBy('channel', $event)">Channel</div>
+				<td ng-show="$ctrl.show.description" class="row_head text_unselectable" ng-click="$ctrl.sortBy('desc', $event)">Description</div>
+			</tr>
+			<tr class="tr_head_filter">
+				<td class="row_head_filter"><input ng-change="$ctrl.filterTable()" ng-model="$ctrl.filters.videoID" class="row_head_filter_input" type="text"></div>
+				<td ng-show="$ctrl.show.title" class="row_head_filter"><input ng-change="$ctrl.filterTable()" ng-model="$ctrl.filters.title" class="row_head_filter_input" type="text"></div>
+				<td ng-show="$ctrl.show.channel" class="row_head_filter"><input ng-change="$ctrl.filterTable()" ng-model="$ctrl.filters.channel" class="row_head_filter_input" type="text"></div>
+				<td ng-show="$ctrl.show.description" class="row_head_filter"><input ng-change="$ctrl.filterTable()" ng-model="$ctrl.filters.desc" class="row_head_filter_input" type="text"></div>
+			</tr>
+		</thead>
+		<tbody ui-sortable="$ctrl.sortableOptions" ng-model="$ctrl.table" class="apps-container">
+			<!--<tr ng-repeat="item in $ctrl.table | orderBy: $ctrl.sortByColumn | filter: $ctrl.filters" class="app" ng-show="$ctrl.filterTable(item)">-->
+			<tr ng-repeat="item in $ctrl.table" class="app" data-eidolon="{{item}}">
+				<td class="item handle">{{$index + 1}}</td>
+				<td class="item">
+					<a ng-if="item.videoID" target="_blank" href="https://www.youtube.com/watch?v={{item.videoID}}">
+						<div class="editable">{{item.videoID}}</div>
+					</a>
+				</td>
+				<td ng-show="$ctrl.show.title" class="item"><div contentEditable="true" class="editable">{{item.title}}</div></td>
+				<td ng-show="$ctrl.show.channel" class="item"><div contentEditable="true" class="editable">{{item.channel}}</div></td>
+				<td ng-show="$ctrl.show.description" class="item"><div contentEditable="true" class="editable">{{item.desc}}</div></td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>

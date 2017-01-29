@@ -1,0 +1,144 @@
+/* -GLOBAL STYLES- */
+h1,h2,h3,h4,h5,h6 {font-weight: bold;}
+h1 {font-size: 2.0em;}
+h2 {font-size: 1.5em;}
+h3 {font-size: 1.2em;}
+h4 {font-size: 1.0em;}
+h5 {font-size: 0.8em;}
+h6 {font-size: 0.5em;}
+
+a {
+	text-decoration: none;
+	color: @color-link;
+	
+	&:hover {
+		text-decoration: underline;
+		color: @color-link + #222;
+	}
+	
+	&:visited {
+		
+	}
+}
+
+
+hr {
+	height: 0px;
+	color: @color-hr;
+	background: @color-hr;
+	text-align: center;
+	margin: 10px auto;
+	border-style: solid none;
+	border-width: 1px;
+	border-top-color: @color-hr;
+	border-bottom-color: @color-hr-bottom;
+}
+
+ul {
+	margin-left: 10px;
+}
+
+ol {
+	margin-left: 10px;
+}
+
+li {}
+
+#wrapper button, #wrapper input[type='button'], #wrapper input[type='submit'], #wrapper input[type='reset'] {}
+
+#wrapper {
+	input[type='text'] {}
+	input[type='password'] {}
+	input[type='checkbox'] {}
+	input[type='file'] {}
+	input[type='image'] {}
+	input[type='radio'] {}
+	input[type='hidden'] {}
+	textarea {}
+	select {}
+	options {}
+}
+
+.text_unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+/* -GLOBAL STYLES END- */
+
+
+/* -BODY- */
+body {
+	min-width: @size-page-min;
+	font-size: 14px;
+	color: @color-text-main;
+	background-color: @color-back;
+	font-family: Arial,Helvetica,sans-serif;
+}
+/* -BODY END- */
+
+
+/* -WRAPPER- */
+#wrapper {
+	width: @size-wrapper;
+	position: relative;
+	background-color: @color-wrapper;
+	margin: 0 auto;
+	padding: 0px;
+	min-height: 100%;
+}
+
+/* -WRAPPER END- */
+
+
+/* -HEADER- */
+header {
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background-color: @color-header;
+}
+/* -HEADER END- */
+
+
+/* -CONTENT- */
+/* this is layout styles of content block, for page specified
+styles see CUSTOM STYLES section (or page.css if files are separated) */
+#content {
+	background-color: @color-content;
+	padding-bottom: 50px;
+	
+	/*needed for clear and float styles works properly*/
+	.content_body {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		padding: 20px 10px;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+/* -CONTENT END- */
+
+
+/* -FOOTER- */
+footer {
+	margin: 0 auto;
+	padding: 0px;
+	background-color: @color-footer;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+	
+	.footer_body {
+		/*padding: 10px;*/
+	}
+}
+/* -FOOTER END- */

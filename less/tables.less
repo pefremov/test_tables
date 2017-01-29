@@ -1,0 +1,54 @@
+/* -CUSTOM STYLES- */
+/*styles for homepages and specified elements*/
+
+.test_table {
+	margin-bottom: 20px;
+	
+	tr {
+		background-color: white;
+		color: black;
+		
+		td {
+			padding: 5px;
+		}
+	}
+	
+	tr:hover .handle{
+		transition: background-color 0.5s;
+		background-color: @color-header + #222;
+	}
+	
+	.handle {
+		transition: background-color 2s;
+		cursor: move;
+		min-width: 50px;
+		background-color: @color-header;
+	}
+	
+	.row_head {
+		background-color: @color-header;
+		cursor: pointer;
+	}
+	
+	.row_head_filter {
+		text-align: center;
+	}
+	
+	.row_head_filter_input {
+		text-align: center;
+		border: 1px solid #333;
+		border-radius: 5px;
+		width: 90%;
+	}
+}
+
+.table_setup {
+	text-align: left;
+	margin-bottom: 5px;
+	
+	.export_link {
+		display: none;
+	}
+}
+
+/* -CUSTOM STYLES END- */
