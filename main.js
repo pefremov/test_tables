@@ -58,7 +58,7 @@ angular.module('io').service('youtube', ["$http", function ($http) {
   var API_KEY = "AIzaSyD-_-dfkHmDQfe8M3ejfIitllksmUGRsOY";
 
   var SEARCH_URL = "https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet";
-  var MAX_RESULTS = 10;
+  var MAX_RESULTS = 15;
 
   //retrives JSON from the specific query on youtube api
   this.getTestQuery = function (query, scope, target) {
